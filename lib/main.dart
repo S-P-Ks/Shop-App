@@ -37,30 +37,31 @@ class MyApp extends StatelessWidget {
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
-              primarySwatch: Colors.purple,
-              accentColor: Colors.deepOrange,
-              fontFamily: "Lato",
-              colorScheme: const ColorScheme(
-                brightness: Brightness.light,
-                primary: Colors.purple,
-                onPrimary: Colors.deepOrange,
-                secondary: Colors.black,
-                onSecondary: Colors.black,
-                error: Colors.red,
-                onError: Colors.redAccent,
-                background: Colors.blue,
-                onBackground: Colors.blueAccent,
-                surface: Colors.amber,
-                onSurface: Colors.amberAccent,
+            primarySwatch: Colors.purple,
+            accentColor: Colors.deepOrange,
+            fontFamily: "Lato",
+            colorScheme: const ColorScheme(
+              brightness: Brightness.light,
+              primary: Colors.purple,
+              onPrimary: Colors.black,
+              secondary: Colors.black,
+              onSecondary: Colors.black,
+              error: Colors.red,
+              onError: Colors.redAccent,
+              background: Colors.blue,
+              onBackground: Colors.blueAccent,
+              surface: Colors.white,
+              onSurface: Colors.amberAccent,
+            ),
+            textTheme: const TextTheme(
+              titleMedium: TextStyle(
+                fontFamily: "Lato",
               ),
-              textTheme: const TextTheme(
-                titleMedium: TextStyle(
-                  fontFamily: "Lato",
-                ),
-                titleLarge: TextStyle(
-                  fontFamily: "Lato",
-                ),
-              )),
+              titleLarge: TextStyle(
+                fontFamily: "Lato",
+              ),
+            ),
+          ),
           home: ProductOverviewScreen(),
           routes: {
             ProductDetailScreen.routeName: (context) => ProductDetailScreen(),

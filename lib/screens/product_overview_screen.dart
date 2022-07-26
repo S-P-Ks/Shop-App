@@ -31,6 +31,9 @@ class _ProductOverviewScreenState extends State<ProductOverviewScreen> {
 
   @override
   void initState() {
+    setState(() {
+      showFavorites = false;
+    });
     super.initState();
   }
 
@@ -53,7 +56,7 @@ class _ProductOverviewScreenState extends State<ProductOverviewScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final ProductsContainer = Provider.of<Products>(context, listen: false);
+    final ProductsContainer = Provider.of<Products>(context, listen: true);
 
     return Scaffold(
         appBar: AppBar(

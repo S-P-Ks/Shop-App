@@ -29,6 +29,7 @@ class MyApp extends StatelessWidget {
         ),
       ],
       child: MaterialApp(
+          debugShowCheckedModeBanner: false,
           title: 'MyShop',
           theme: ThemeData(
             primarySwatch: Colors.purple,
@@ -42,7 +43,7 @@ class MyApp extends StatelessWidget {
             OrdersScreen.routeName: (ctx) => OrdersScreen(),
             UserProductsScreen.routeName: (ctx) => UserProductsScreen(),
             EditProductScreen.routeName: (ctx) => EditProductScreen(),
-          }),
+          },),
     );
   }
 }

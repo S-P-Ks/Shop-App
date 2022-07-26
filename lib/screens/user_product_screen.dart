@@ -12,7 +12,7 @@ class UserProductScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var productsData = Provider.of<Products>(context);
-    print(productsData.items[0].id);
+    // print(productsData.items[0].id);
 
     Future<void> _refereshData(BuildContext context) {
       return Provider.of<Products>(context, listen: false)

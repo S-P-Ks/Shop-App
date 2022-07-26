@@ -86,11 +86,10 @@ class _EditProductScreenState extends State<EditProductScreen> {
     if (_savedProducrt.id != null && _savedProducrt.id != "") {
       Provider.of<Products>(context, listen: false)
           .updateProduct(_savedProducrt.id, _savedProducrt);
-
-      Navigator.of(context).pushNamed(UserProductScreen.routeName);
       setState(() {
         _isLoading = false;
       });
+      Navigator.of(context).pushNamed(UserProductScreen.routeName);
     } else {
       var p = Product(
         id: DateTime.now().toString(),
@@ -101,7 +100,12 @@ class _EditProductScreenState extends State<EditProductScreen> {
       );
       Provider.of<Products>(context, listen: false)
           .addProduct(_savedProducrt)
-          .catchError((err) {
+          .then((value) {
+        setState(() {
+          _isLoading = false;
+        });
+        Navigator.of(context).pushNamed(UserProductScreen.routeName);
+      }).catchError((err) {
         return showDialog(
           context: context,
           builder: (ctx) => AlertDialog(
